@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+        
+    {%csrf_token%}
+    {%block content %}
+    <div class="container mx-4 py-3">
+        <table class="table table-bordered table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone no.</th>
+                </tr>
+            </thead>
+        {% for d1 in data %}
+        
+            <tbody>
+                <tr>
+                    <td class="bg-primary">{{d1.name}}</td>
+                    <td class="bg-primary">{{d1.email}}</td>
+                    <td class="bg-primary">{{d1.phone}}</td>
+                </tr>
+                
+            </tbody>
+            {%endfor%}
+        </table>
+        <!-- {{d1.name}}
+        {{d1.email}}
+        {{d1.phone}}<br> -->
+        
+    </div>
+    {%endblock%}
+</body>
+
+</html>
